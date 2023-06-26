@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh-TW">
+<head>
+<meta charset="utf-8">
+<title>掃碼結帳 - iDoo 愛點餐飲</title>
+<meta name="description" content="iDoo 愛點餐飲 掃碼結帳" />
+<meta name="keywords" content="iDoo 愛點餐飲 掃碼結帳" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="MobileOptimized" content="width">
+<meta name="HandheldFriendly" content="true">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<link rel="shortcut icon" type="image/png" href="https://counter.idoo.best/images/favicon.png?v=2">
+<link rel="stylesheet" href="css/member.css">
+
+<script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
+<script src="https://kit.fontawesome.com/488bab161f.js" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/layout.js"></script>
+</head>
+
+<body>
+<div class="body-wrap">
+<div class="container member">
+    <div class="main__left">
+        <div class="member__tabs">
+            <a class="active" href="member.html">
+                <div>輸入電話</div>
+                <div class="fs">累積消費回饋</div>
+            </a>
+            <a href="member_discount.html">
+                <div>會員掃碼</div>
+                <div class="fs">折抵點數票券</div>
+            </a>
+        </div>
+
+        <div class="member__thistime">
+            <b>本次消費回饋：</b>
+            <div class="discount__list">
+                <span><i class="icon-typoint"></i>紅利桃子 +10</span>
+                <span><i class="icon-coupon"></i>滿千折百</span>
+            </div>
+        </div>
+
+        <div class="cash__calculator">
+            <input class="calculator__input" type="text" placeholder="輸入電話領取回饋" value="" disabled>
+            <div class="calculator__numbers">
+                <a>7</a><a>8</a><a>9</a>
+                <a>4</a><a>5</a><a>6</a>
+                <a>1</a><a>2</a><a>3</a>
+                <a class="calculator__number--delete"><i class="fa-solid fa-delete-left fa-xl"></i></a>
+                <a>0</a>
+                <a class="calculator__number--check"><i class="fa-solid fa-circle-check fa-xl"></i></a>
+            </div>
+        </div>
+
+        <!-- 電話集點成功 -->
+        <div class="member__tabs">
+            <a class="active" href="member.html">
+                <div>輸入電話</div>
+                <div class="fs">累積消費回饋</div>
+            </a>
+            <a class="disabled">
+                <div>會員掃碼</div>
+                <div class="fs">折抵點數票券</div>
+            </a>
+        </div>
+
+        <div class="member__mobile--ok">
+            回饋將於完成交易後發送至0987654321<br>
+            <b class="fl">請現場支付$2500</b>
+        </div>
+
+        <div class="member__thistime">
+            <b>本次消費回饋：</b>
+            <div class="discount__list">
+                <span><i class="icon-typoint"></i>紅利桃子 +10</span>
+                <span><i class="icon-coupon"></i>滿千折百</span>
+            </div>
+        </div>
+
+        <div class="member__moreinfo">
+            <div class="moreinfo__content">
+                <h2>更多會員資訊<br>請參考右方說明</h2>
+                <div>回饋內容將於交易完成後<br>30分鐘內自動存入所屬會員中心</div>
+            </div>
+            <div class="qrcode__img">
+                <img src="images/qrcode.svg">
+            </div>
+        </div>
+
+        <!-- 本次消費無回饋 -->
+        <div class="member__tabs">
+            <a class="active" href="member.html">
+                <div>輸入電話</div>
+                <div class="fs">累積消費回饋</div>
+            </a>
+            <a href="discount.html">
+                <div>會員掃碼</div>
+                <div class="fs">折抵點數票券</div>
+            </a>
+        </div>
+
+        <div class="member__thistime">
+            <b>本次消費回饋：</b>
+            <div class="discount__list">
+                <span>無回饋</span>
+            </div>
+        </div>
+
+        <div class="cash__calculator disabled">
+            <input class="calculator__input" type="text" placeholder="輸入電話領取回饋" value="" disabled>
+            <div class="calculator__numbers">
+                <a>7</a><a>8</a><a>9</a>
+                <a>4</a><a>5</a><a>6</a>
+                <a>1</a><a>2</a><a>3</a>
+                <a class="calculator__number--delete"><i class="fa-solid fa-delete-left fa-xl"></i></a>
+                <a>0</a>
+                <a class="calculator__number--check"><i class="fa-solid fa-circle-check fa-xl"></i></a>
+            </div>
+        </div>
+
+        <div class="order">
+            <div class="order__id">訂單編號 87654321</div>
+            <div class="order__time">2023/7/25 19:25</div>
+        </div>
+    </div><!-- END .main__left -->
+
+    <div class="main__right">
+        <!-- 顯示一張DM -->
+        <div class="main__right--dm"><img src="images/dm.jpg"></div>
+    </div><!-- END .main__right -->
+</div><!-- END .container -->
+</div><!-- END .body-wrap -->
+</body>
+
+</html>

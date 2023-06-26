@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <link rel="shortcut icon" type="image/png" href="https://counter.idoo.best/images/favicon.png?v=2">
-<link rel="stylesheet" href="css/standard.css">
+<link rel="stylesheet" href="css/member.css">
 
 <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
 <script src="https://kit.fontawesome.com/488bab161f.js" crossorigin="anonymous"></script>
@@ -23,57 +23,53 @@
 <div class="body-wrap">
 <div class="container">
     <div class="main__left">
-        <div class="store-name">the Chips美式餐廳</div>
-        <div class="title-s">付款方式</div>
-        <div class="payments">
-            <a><img src="images/visa.png" alt="VISA信用卡"></a>
-            <a><img src="images/mastercard.png" alt="MASTER CARD信用卡"></a>
-            <a><img src="images/jcb.png" alt="JCB信用卡"></a>
-            <a><img src="images/applepay.png" alt="Apple Pay"></a>
-            <a><img src="images/googlepay.png" alt="Google Pay"></a>
-            <a><img src="images/linepay.png" alt="Line Pay"></a>
-            <a><img src="images/jkopay.png" alt="街口支付"></a>
-            <!-- <a><img src="images/pxpay.png" alt="全支付"></a> -->
-            <a><img src="images/taiwanpay.png" alt="臺灣Pay"></a>
-            <a><img src="images/pluspay.png" alt="全盈Pay"></a>
-            <a><img src="images/easycard.png" alt="悠遊付"></a>
+        <div class="member__tabs">
+            <a href="member.html">
+                <div>輸入電話</div>
+                <div class="fs">累積消費回饋</div>
+            </a>
+            <a class="active" href="member_discount.html">
+                <div>會員掃碼</div>
+                <div class="fs">折抵點數票券</div>
+            </a>
         </div>
-        <div class="qrcode">
-            <div class="qrcode__title">掃我付款</div>
+
+        <div class="qrcode discount">
+            <div class="qrcode__title">掃我折抵</div>
             <div class="qrcode__img">
                 <img src="images/qrcode.svg">
             </div>
-            <div class="qrcode__total">$<b>2,500</b></div>
+            <h2>點數票券</h2>
         </div>
 
-        <!-- 付款成功 -->
-        <div class="qrcode pay--state-success">
-            <div class="qrcode__title">付款成功</div>
-            <div class="title-s">請往左邊等餐</div>
+        <!-- 折抵成功 -->
+        <div class="member__tabs">
+            <a class="disabled">
+                <div>輸入電話</div>
+                <div class="fs">累積消費回饋</div>
+            </a>
+            <a class="active" href="member_discount.html">
+                <div>會員掃碼</div>
+                <div class="fs">折抵點數票券</div>
+            </a>
+        </div>
+
+        <div class="qrcode discount--state-success">
+            <div class="qrcode__title">折抵成功</div>
             <div class="qrcode__img">
                 <img src="images/qrcode.svg">
                 <div class="state-overlay state--done"></div>
             </div>
-            <div class="qrcode__total">$<b>2,500</b></div>
+            <h2>請支付$2350</h2>
         </div>
 
-        <!-- 付款失敗 -->
-        <div class="qrcode pay--state-false">
-            <div class="qrcode__title">付款失敗 請再試一次</div>
+        <!-- 折抵失敗 -->
+        <div class="qrcode discount--state-false">
+            <div class="qrcode__title">折抵失敗 請再試一次</div>
             <div class="qrcode__img">
                 <img src="images/qrcode.svg">
             </div>
-            <div class="qrcode__total">$<b>2,500</b></div>
-        </div>
-
-        <!-- QRcode失效 -->
-        <div class="qrcode pay--state-false">
-            <div class="qrcode__title">付款碼已失效</div>
-            <div class="qrcode__img">
-                <img src="images/qrcode.svg">
-                <div class="state-overlay state--outdated"></div>
-            </div>
-            <div class="qrcode__total">$<b>2,500</b></div>
+            <h2>點數票券</h2>
         </div>
 
         <div class="order">
@@ -83,11 +79,8 @@
     </div><!-- END .main__left -->
 
     <div class="main__right">
-        <!-- 顯示一張DM -->
-        <!-- <div class="main__right--dm"><img src="images/dm.jpg"></div> -->
-
         <!-- 顯示訂單明細 -->
-        <div class="main__right--order">
+        <div class="main__right--order discount">
             <div class="order-detail">
             <div class="title-b">餐點內容</div>
             <table>
@@ -158,6 +151,14 @@
                 <div class="order-count__discount">
                     <span>折扣</span>
                     <b>-$500</b>
+                </div>
+                <div class="order-count__discount">
+                    <span>紅利桃子 50點</span>
+                    <b>-$50</b>
+                </div>
+                <div class="order-count__discount">
+                    <span>滿千折百 優惠券</span>
+                    <b>-$100</b>
                 </div>
                 <div class="order-count__total">
                     <span>總計</span>
