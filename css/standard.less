@@ -82,8 +82,8 @@
     .main__right--dm { width: 100%; height: 100%; overflow: hidden; 
         > img { width: 100%; height: 100%; object-fit: cover; }
     }
-    .main__right--order { width: 100%; height: 100%; padding: 5% 5% 5% 0; display: flex; flex-flow: wrap; align-content: space-between; align-items: stretch; 
-        .order-detail { position: relative; width: 100%; height: calc(100% - 145px); padding: 0 20px 20px 20px; overflow: auto; background: @color-white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+    .main__right--order { width: 100%; height: 100%; padding: 5% 5% 5% 0; display: flex; flex-direction: column; /* flex-flow: wrap; align-content: space-between; align-items: stretch; */
+        .order-detail { position: relative; width: 100%; height: 100%; padding: 0 20px 20px 20px; overflow: auto; background: @color-white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
             .title-b { position: sticky; width: 100%; padding: 10px; top: 0; left: 0; color: @color-black; font-size: 22px; text-align: center; background: @color-white; }
 
             > table { width: 100%; border: none; 
@@ -98,10 +98,11 @@
             .pt-subtotal { padding-left: 15px; font-size: 22px; font-weight: bold; text-align: right; }
         }
 
-        .order-count { position: relative; width: 100%; height: 135px; padding: 2.5% 5%; margin-top: 10px; background: @color-white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
+        .order-count { position: relative; width: 100%; height: fit-content; padding: 2.5% 5%; margin-top: 10px; background: @color-white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
             > * { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center;
                 padding: 3px 0; font-size: 22px; color: @color-light;
             }
+            .order-count__addon-items { width: 80%; margin-top: -6px; font-size: 16px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
             .order-count__discount { color: @color-red; }
             .order-count__total { color: @color-black; }
         }
