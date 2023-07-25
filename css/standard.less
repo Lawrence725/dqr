@@ -57,7 +57,7 @@
 
         .qrcode__title { font-size: 32px; }
         .qrcode__img { position: relative; width: 60%; max-width: 180px; margin: 15px auto 10px auto; 
-            > img { display: block; }
+            > img { display: block; width: 70%; height: auto; margin: 0 auto; }
         }
         .qrcode__total { font-size: 24px; font-weight: bold; 
             > b { font-size: 44px; }
@@ -82,12 +82,15 @@
 
     /* 付款碼以照片顯示 */
     .qrcode.photo { position: relative; width: auto; height: 80%; padding: 0; overflow: hidden;
-        > img { display: block; width: auto; height: 100%; margin: 0 auto; }
+        > img { display: block; width: auto; height: 100%; }
+        .qrcode__img { position: absolute; width: 80%; max-width: 80%; bottom: 7%; left: 10%; right: 10%; margin: 0 auto; padding: 5% 5% 7% 5%; background: #FFFFFF; border-radius: 25px;
+            .qrcode__title { margin-bottom: 15px; font-size: 20px; font-weight: bold; color: @color-black; }
+        }
     }
     .qrcode.noborder { border: none; }
     .qrcode.photo.pay--state-success, .qrcode.photo.pay--state-false { 
-        > img { filter: grayscale(1); -webkit-filter: grayscale(1); }
-        .state--done, .state--outdated { background-size: 40%; background-color: rgba(255, 255, 255, 0.6); }
+        > img { filter: grayscale(1); -webkit-filter: grayscale(1); opacity: 0.5; }
+        .state--done, .state--outdated { border-radius: 25px; background-size: 40%; background-color: rgba(255, 255, 255, 0.6); }
     }
 }
 .main__right { width: 48%; height: 100%; 
@@ -169,6 +172,11 @@
             .qrcode__img { max-width: 120px; margin: 15px auto 10px auto; }
             .qrcode__total { font-size: 16px; 
                 > b { font-size: 32px; }
+            }
+        }
+        .qrcode.photo { 
+            .qrcode__img { 
+                .qrcode__title { font-size: 14px; }
             }
         }
     }
