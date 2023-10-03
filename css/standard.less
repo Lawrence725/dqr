@@ -1,41 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url("reset.css");
-
-/* color */
-@color-green: #27AE60;
-@color-blue: #22798C;
-@color-red: #EB5757;
-@color-orange: #FF9900;
-@color-white: #FFFFFF;
-@color-black: #000000;
-@color-normal: #333333;
-@color-light: #828282;
-@color-lighter: #BDBDBD;
-@color-lightist: #F2F1F6;
-@color-brown: #9B794C;
-
-/* font family */
-.font-family (@font-size: 14px) {
-    font-family: 'Roboto', 'Noto Sans TC', 'Microsoft JhengHei', '黑體', sans-serif, serif;
-    font-size: @font-size; letter-spacing: 0.5px; -webkit-text-size-adjust: none; 
-}
-
-/* padding box */
-.padding-box() { 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; 
-    box-sizing: border-box;
-}
-
-/* img url */
-@img-path: "../images/";
+@import url("variable");
 
 /* default */
-.body-wrap { width: 100%; height: auto; .font-family(18px); color: @color-normal; background: @color-lightist; overflow: hidden; }
+.body-wrap { width: 100%; height: auto; .font-family(); color: @color-normal; font-size: @fM;
+    background: @color-lightist; overflow: hidden; }
 .body-wrap * { .padding-box(); }
 .body-wrap a, .body-wrap button, .body-wrap select { cursor: pointer; }
 .body-wrap a:hover { text-decoration: none; }
-.body-wrap select, .body-wrap input, .body-wrap textarea, .body-wrap button { .font-family(16px); }
+.body-wrap select, .body-wrap input, .body-wrap textarea, .body-wrap button { .font-family(); font-size: @fL; }
 .body-wrap input:-webkit-autofill { box-shadow: 0 0 0px 1000px @color-white inset !important; }
 .body-wrap img { max-width: 100%; height: auto; }
 
@@ -43,7 +16,7 @@
     display: flex; flex-flow: nowrap; justify-content: space-between; align-items: flex-start; }
 .main__left { width: 52%; height: 100%; padding: 3%; display: flex; flex-flow: wrap; align-content: space-between; align-items: stretch;
     > * { width: 100%; }
-    .store-name { margin-bottom: 10px; font-size: 24px; font-weight: bold; text-align: center; }
+    .store-name { margin-bottom: 10px; font-size: @fXL; font-weight: bold; text-align: center; }
     .title-s { margin-bottom: 5px; color: @color-light; text-align: center; }
     .payments { display: flex; flex-flow: wrap; justify-content: stretch; align-items: flex-start; 
         > a { width: 14%; margin-right: 7.5%; margin-bottom: 0; cursor: default; }
@@ -55,12 +28,12 @@
         -webkit-animation: border-shiny 1.5s infinite; 
         animation: border-shiny 1.5s infinite;
 
-        .qrcode__title { font-size: 32px; }
+        .qrcode__title { font-size: @fXXL; }
         .qrcode__img { position: relative; width: 60%; max-width: 180px; margin: 15px auto 10px auto; 
             > img { display: block; width: 100%; height: auto; margin: 0 auto; }
         }
-        .qrcode__total { font-size: 24px; font-weight: bold; 
-            > b { font-size: 44px; }
+        .qrcode__total { font-size: @fXL; font-weight: bold; 
+            > b { font-size: @fXXXL; }
         }
 
         .state-overlay { position: absolute; width: 100%; height: 100%; left: 0; right: 0; top: 0; bottom: 0; margin: auto; background-color: rgba(255, 255, 255, 0.9); }
@@ -78,13 +51,13 @@
     .pay--state-false { color: @color-red; border-color: @color-red; 
         .state--outdated { background-image: url(../images/outdated.png); background-repeat: no-repeat; background-position: center; background-size: 75%; }
     }
-    .order { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center; color: @color-light; font-size: 16px; }
+    .order { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center; color: @color-light; font-size: @fL; }
 
     /* 付款碼以照片顯示 */
     .qrcode.photo { position: relative; width: auto; height: 100%; padding: 0; overflow: hidden;
         > img { display: block; width: auto; height: 100%; }
         .qrcode__img { position: absolute; width: 80%; max-width: 80%; bottom: 7%; left: 10%; right: 10%; margin: 0 auto; padding: 5% 5% 7% 5%; background: #FFFFFF; border-radius: 25px;
-            .qrcode__title { margin-bottom: 20px; font-size: 20px; font-weight: bold; color: @color-black; }
+            .qrcode__title { margin-bottom: 20px; font-size: @fL; font-weight: bold; color: @color-black; }
             > img { width: 70%; }
         }
     }
@@ -100,31 +73,31 @@
     }
     .main__right--order { width: 100%; height: 100%; padding: 5% 5% 5% 0; display: flex; flex-direction: column; /* flex-flow: wrap; align-content: space-between; align-items: stretch; */
         .order-detail { position: relative; width: 100%; height: 100%; padding: 0 20px 20px 20px; overflow: auto; background: @color-white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
-            .title-b { position: sticky; width: 100%; padding: 10px; top: 0; left: 0; color: @color-black; font-size: 22px; text-align: center; background: @color-white; 
-                .order__time { position: absolute; width: 30%; left: 0; top: 15px; font-size: 14px; color: @color-light; text-align: left; }
-                .order__id { position: absolute; width: 30%; right: 0; top: 15px; font-size: 14px; color: @color-light; text-align: right; }
+            .title-b { position: sticky; width: 100%; padding: 10px; top: 0; left: 0; color: @color-black; font-size: @fXL; text-align: center; background: @color-white; 
+                .order__time { position: absolute; width: 30%; left: 0; top: 15px; font-size: @fM; color: @color-light; text-align: left; }
+                .order__id { position: absolute; width: 30%; right: 0; top: 15px; font-size: @fM; color: @color-light; text-align: right; }
             }
 
             > table { width: 100%; border: none; 
                 td { padding-bottom: 15px; }
             }
             .pt-qty { padding-right: 10px; 
-                > span { display: inline-block; padding: 3px 10px; font-size: 22px; color: @color-black; text-align: center; background: @color-lightist; border-radius: 10px; }
+                > span { display: inline-block; padding: 3px 10px; font-size: @fXL; color: @color-black; text-align: center; background: @color-lightist; border-radius: 10px; }
             }
-            .pt-detail { width: 100%; color: @color-light; font-size: 16px; font-weight: normal;
-                .pt-name { color: @color-black; font-size: 22px; font-weight: 500; }
+            .pt-detail { width: 100%; color: @color-light; font-weight: normal;
+                .pt-name { color: @color-black; font-size: @fXL; font-weight: 500; }
             }
-            .pt-subtotal { padding-left: 15px; font-size: 22px; font-weight: bold; text-align: right; white-space: nowrap;
-                .fs { font-size: 14px; margin: auto; }
+            .pt-subtotal { padding-left: 15px; font-size: @fXL; font-weight: bold; text-align: right; white-space: nowrap;
+                .fs { font-size: @fM; margin: auto; }
             }
         }
 
         .order-count { position: relative; width: 100%; height: fit-content; padding: 2.5% 5%; margin-top: 10px; background: @color-white; box-shadow: 0px 5px 10px rgba(55, 84, 170, 0.2);
             > * { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: center;
-                padding: 3px 0; font-size: 22px; color: @color-light;
-                .fs { font-size: 14px; }
+                padding: 3px 0; font-size: @fL; color: @color-light;
+                .fs { font-size: @fM; }
             }
-            .order-count__addon-items { width: 80%; margin-top: -6px; font-size: 16px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
+            .order-count__addon-items { width: 80%; margin-top: -6px; font-size: @fM; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; }
             .order-count__discount { color: @color-red; }
             .order-count__total { color: @color-black; }
         }
@@ -139,30 +112,30 @@
 
 @media (min-height: 900px) {
     .main__left { 
-        .store-name { font-size: 32px; }
+        .store-name { font-size: @fXXL; }
         .qrcode { padding: 12%;
-            .qrcode__title { font-size: 40px; }
+            .qrcode__title { font-size: @fXXL; }
             .qrcode__img { max-width: 300px; margin: 30px auto 20px auto; }
-            .qrcode__total { font-size: 32px;
-                > b { font-size: 52px; }
+            .qrcode__total { font-size: @fXXL;
+                > b { font-size: @fXXXL; }
             }
         }
     }
 }
 
 @media (max-width: 820px) {
-    .body-wrap { font-size: 14px; overflow: auto; }
+    .body-wrap { font-size: @fM; overflow: auto; }
     .container { min-height: 100dvh; height: auto; }
     .main__left { width: 100%; height: auto; padding: 10% 5% 5% 5%; 
-        .store-name { font-size: 18px; }
+        .store-name { font-size: @fL; }
         .payments > a { width: 18.4%; margin-right: 2%; }
         .qrcode {
-            .qrcode__title { font-size: 24px; }
-            .qrcode__total { font-size: 18px;
-                > b { font-size: 36px; }
+            .qrcode__title { font-size: @fXL; }
+            .qrcode__total { font-size: @fL;
+                > b { font-size: @fXXL; }
             }
         }
-        .order { font-size: 14px; }
+        .order { font-size: @fM; }
     }
     .container .main__right { display: none; }
     .qrcode.pay--state-success { margin: 10px auto 25px auto; }
@@ -170,17 +143,17 @@
 
 @media (max-height: 680px) {
     .main__left { 
-        .store-name { font-size: 20px; }
+        .store-name { font-size: @fL; }
         .qrcode { margin: 5px auto 10px auto; 
-            .qrcode__title { font-size: 24px; }
+            .qrcode__title { font-size: @fXL; }
             .qrcode__img { max-width: 120px; margin: 15px auto 10px auto; }
-            .qrcode__total { font-size: 16px; 
-                > b { font-size: 32px; }
+            .qrcode__total { font-size: @fL; 
+                > b { font-size: @fXXL; }
             }
         }
         .qrcode.photo { 
             .qrcode__img { 
-                .qrcode__title { font-size: 14px; }
+                .qrcode__title { font-size: @fM; }
             }
         }
     }

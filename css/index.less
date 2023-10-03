@@ -1,40 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url("reset.css");
-
-/* color */
-@color-blue: #22798C;
-@color-orange: #FF9900;
-@color-red: #EB5757;
-@color-white: #FFFFFF;
-@color-black: #000000;
-@color-normal: #333333;
-@color-lighter: #BDBDBD;
-@color-lightist: #F2F1F6;
-
-/* font family */
-.font-family (@font-size: 14px) {
-    font-family: 'Roboto', 'Noto Sans TC', 'Microsoft JhengHei', '黑體', sans-serif, serif;
-    font-size: @font-size; letter-spacing: 0.5px; -webkit-text-size-adjust: none; 
-}
-
-/* padding box */
-.padding-box() { 
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box; 
-    box-sizing: border-box;
-}
-
-/* img url */
-@img-path: "../images/";
-
-/* default */
-.body-wrap { width: 100%; height: auto; .font-family(18px); color: @color-normal; background: @color-lightist; overflow: hidden; }
-.body-wrap * { .padding-box(); }
-.body-wrap a, .body-wrap button, .body-wrap select { cursor: pointer; }
-.body-wrap a:hover { text-decoration: none; }
-.body-wrap select, .body-wrap input, .body-wrap textarea, .body-wrap button { .font-family(16px); }
-.body-wrap input:-webkit-autofill { box-shadow: 0 0 0px 1000px @color-white inset !important; }
-.body-wrap img { max-width: 100%; height: auto; }
+@import url("variable");
+@import url("standard.css");
 
 /*webkit瀏覽器專用*/
 * ::-webkit-input-placeholder { color: @color-lighter; line-height: 20px; }
@@ -55,26 +22,26 @@
         }
 
         .verify { width: 100%; margin: 4dvh auto;
-            input { width: 100%; padding: 10px; font-size: 24px; text-align: center; border-bottom: 1px solid @color-lighter; }
+            input { width: 100%; padding: 10px; font-size: @fXL; text-align: center; border-bottom: 1px solid @color-lighter; }
             .error-msg { margin-top: 10px; text-align: center; color: @color-red; }
         }
 
         .btn { padding-bottom: 8dvh;
-            button, a { padding: 10px 30px; color: @color-white; font-size: 24px; background: @color-blue; border-radius: 99em; box-shadow: 0 1px @color-lighter; 
+            button, a { padding: 10px 30px; color: @color-white; font-size: @fXL; background: @color-blue; border-radius: 99em; box-shadow: 0 1px @color-lighter; 
                 > i { margin-left: 10px; }
             }
         }
 
-        .bottom { width: 100%; color: @color-lighter; font-size: 18px; text-align: center; vertical-align: middle;
+        .bottom { width: 100%; color: @color-lighter; font-size: @fM; text-align: center; vertical-align: middle;
             .icon-share { display: inline-block; width: 20px; height: 20px; margin: 0 0 -4px 4px; background: url('../images/icon/share.svg') no-repeat center; background-size: contain; }
-            button, a { margin-top: 10px; padding: 7px 20px; color: @color-blue; font-size: 18px; background: @color-lightist; border-radius: 99em; }
+            button, a { margin-top: 10px; padding: 7px 20px; color: @color-blue; font-size: @fM; background: @color-lightist; border-radius: 99em; }
         }
     }
 }
 .version { position: fixed; right: 35px; bottom: 30px; color: @color-lighter; }
 
 @media (max-width: 820px) {
-    .container.index .main .bottom { bottom: 60px; font-size: 14px; 
+    .container.index .main .bottom { bottom: 60px; font-size: @fS; 
         .icon-share { width: 16px; height: 18px; margin-bottom: -3px; }
     }
 }

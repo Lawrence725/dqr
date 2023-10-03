@@ -1,15 +1,18 @@
-@import url("standard");
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("reset.css");
+@import url("variable");
+@import url("standard.css");
 
 .container.member .main__left { background: @color-white; }
 .member__tabs { display: flex; flex-flow: nowrap; justify-content: space-between; align-items: flex-end; margin-bottom: 20px;
-    > a { width: 100%; padding: 5px 10px; color: @color-light; border-bottom: 3px solid @color-light; font-size: 24px; text-align: center; line-height: 100%;
-        .fs { font-size: 16px; }
+    > a { width: 100%; padding: 5px 10px; color: @color-light; border-bottom: 3px solid @color-light; font-size: @fXL; text-align: center; line-height: 100%;
+        .fs { font-size: @fL; }
     }
     .active { color: @color-brown; font-weight: bold; border-bottom: 5px solid @color-brown; }
     .disabled { color: @color-lighter; border-color: @color-lighter; opacity: 0.5; }
 }
-.member__mobile--ok { margin: 20px auto; color: @color-brown; font-size: 21px; text-align: center;
-    .fl { font-size: 58px; }
+.member__mobile--ok { margin: 20px auto; color: @color-brown; font-size: @fL; text-align: center;
+    .fl { font-size: @fXXXL; }
 }
 .member__thistime { display: flex; flex-flow: wrap; justify-content: center; align-items: center; 
     > b { color: @color-brown; white-space: nowrap; }
@@ -22,15 +25,15 @@
 }
 .member__moreinfo { display: flex; flex-flow: nowrap; justify-content: center; align-items: center; 
     padding: 25px; margin: 20px auto; background: @color-lightist;
-    .moreinfo__content { text-align: right; color: @color-light; font-size: 16px; 
-        > h2 { margin: -5px 0 20px 0; font-size: 24px; color: @color-brown; font-weight: bold; }
+    .moreinfo__content { text-align: right; color: @color-light; font-size: @fL; 
+        > h2 { margin: -5px 0 20px 0; font-size: @fXL; color: @color-brown; font-weight: bold; }
     }
     .qrcode__img { width: 150px; margin-left: 30px; }
 }
 .cash__calculator { position: relative; width: 100%; margin: 20px auto; display: flex; flex-direction: column; align-items: center; justify-content: space-between; 
-    .calculator__input { width: 100%; margin-bottom: 20px; font-size: 36px; text-align: center; color: @color-lighter; -webkit-text-fill-color: @color-lighter; background: none; }
+    .calculator__input { width: 100%; margin-bottom: 20px; font-size: @fXXL; text-align: center; color: @color-lighter; -webkit-text-fill-color: @color-lighter; background: none; }
     .calculator__numbers { width: 100%; gap: 10px; display: flex; flex-wrap: wrap;
-        a { width: calc(33.33% - 6.67px); height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 36px; background: @color-lightist;
+        a { width: calc(33.33% - 6.67px); height: 80px; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: @fXXL; background: @color-lightist;
             &.calculator__number--none { background: transparent; pointer-events: none; }
             &.calculator__number--delete { background: transparent;
                 i, svg { color: @color-lighter; }
@@ -44,17 +47,17 @@
 .cash__calculator.disabled::after { display: block; content: ''; position: absolute; width: 100%; height: 100%; left: 0; top: 0; background: rgba(255,255,255,0.8); }
 
 .qrcode.discount { color: @color-brown; border-color: @color-brown;
-    h2 { font-size: 48px; font-weight: bold; }
-    .qrcode__title { font-size: 32px; }
+    h2 { font-size: @fXXXL; font-weight: bold; }
+    .qrcode__title { font-size: @fXXL; }
 }
 
 .qrcode.discount--state-success { color: @color-green;  border-color: @color-green;
-    h2 { font-size: 48px; font-weight: bold; }
+    h2 { font-size: @fXXXL; font-weight: bold; }
     .state--done { background-image: url(../images/done.png); background-repeat: no-repeat; background-position: center; background-size: 60%; } 
 }
 
 .qrcode.discount--state-false { color: @color-red; border-color: @color-red; 
-    h2 { font-size: 48px; font-weight: bold; }
+    h2 { font-size: @fXXXL; font-weight: bold; }
     .state--outdated { background-image: url(../images/outdated.png); background-repeat: no-repeat; background-position: center; background-size: 75%; }
 }
 
@@ -65,33 +68,33 @@
 
 @media (min-height: 900px) {
     .member__thistime { justify-content: center; text-align: center;
-        > b { width: 100%; font-size: 24px; }
+        > b { width: 100%; font-size: @fXL; }
         .discount__list { width: 100%; text-align: center;
-            > span { padding: 10px 30px; margin: 10px 0 10px 10px; font-size: 24px; border-radius: 30px; }
+            > span { padding: 10px 30px; margin: 10px 0 10px 10px; font-size: @fXL; border-radius: 30px; }
         }
     }
     .cash__calculator {
-        .calculator__input { font-size: 36px; }
+        .calculator__input { font-size: @fXXL; }
         .calculator__numbers { gap: 20px;
-            a { width: calc(33.33% - 13.34px); height: 80px; font-size: 36px; }
+            a { width: calc(33.33% - 13.34px); height: 80px; font-size: @fXXL; }
         }
     }
 
-    .member__mobile--ok { margin: 20px auto; font-size: 24px;
-        .fl { font-size: 52px; } 
+    .member__mobile--ok { margin: 20px auto; font-size: @fXL;
+        .fl { font-size: @fXXXL; } 
     }
 
     .member__moreinfo { padding: 18% 20px;
-        .moreinfo__content { font-size: 20px; 
-            > h2 { font-size: 32px; }
+        .moreinfo__content { font-size: @fL;
+            > h2 { font-size: @fXXL; }
         }
     } 
 }
 
 @media (max-width: 820px) {
     .member__moreinfo { padding: 20px;
-        .moreinfo__content { font-size: 14px; 
-            > h2 { font-size: 20px; }
+        .moreinfo__content { font-size: @fM; 
+            > h2 { font-size: @fL; }
         }
         .qrcode__img { margin-left: 20px; }
     }
@@ -99,17 +102,17 @@
 
 @media (max-height: 680px) {
     .cash__calculator {
-        .calculator__input { font-size: 24px; }
+        .calculator__input { font-size: @fXL; }
         .calculator__numbers { 
-            a { height: 50px; font-size: 24px; }
+            a { height: 50px; font-size: @fXL; }
         }
     }
 
-    .member__mobile--ok { margin: 10px auto; font-size: 16px;
-        .fl { font-size: 36px; } 
+    .member__mobile--ok { margin: 10px auto; font-size: @fL;
+        .fl { font-size: @fXXL; } 
     }
 
     .member__moreinfo { padding: 15px;
-        .moreinfo__content { font-size: 14px; }
+        .moreinfo__content { font-size: @fM; }
     } 
 }
